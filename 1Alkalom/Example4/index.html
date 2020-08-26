@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>BMI Kalkulátor</title>
+</head>
+<body>
+    <div class="container">
+    <h1>BMI Kalkulátor</h1>
+    <form>
+    <p><label>Magasság(CM): </label><input type="text" id="height"></p>
+    <p><label>Testsúly(KG): </label><input type="text" id="weight"></p>
+    <button>Számol</button>
+    <div id="results"></div>
+    <div id="weight-guide">
+    <h3>BMI Súly magyarázat</h3>
+    <p>Alultáplált = kisebb 18.6</p>
+    <p>Normál érték = 18.6 és 24.9</p>
+    <p>Túlsúly = nagyobb 24.9</p>
+    </div>
+    </form>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

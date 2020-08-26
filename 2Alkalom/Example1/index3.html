@@ -1,0 +1,48 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <!-- Bármilyen tartalom -->
+  <p>Logikai kifejezések "és" javascript példa</p>
+  <!--  -->
+  <script>
+    alert( true && true );   // true
+    alert( false && true );  // false
+    alert( true && false );  // false
+    alert( false && false ); // false
+    
+    <!-- Extrák -->
+    // if the first operand is truthy,
+    // AND returns the second operand:
+    alert( 1 && 0 ); // 0
+    alert( 1 && 5 ); // 5
+
+    // if the first operand is falsy,
+    // AND returns it. The second operand is ignored
+    alert( null && 5 ); // null
+    alert( 0 && "no matter what" ); // 0
+  </script>
+</body>
+
+</html>

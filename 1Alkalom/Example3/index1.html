@@ -1,0 +1,52 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+  <form>
+    <label>
+      <input type="text" id="firstElement" name="fElement" value="5"/>
+    </label>
+    <label>
+      <input type="text" id="secondElement" name="sElement" value="10"/>
+    </label>
+    <button id="changeBtn" type="button" >Csere</button>
+  </form>
+
+
+  <!-- Add your site or application content here -->
+  <p>Üdv, számokat írok ki.</p>
+
+  <!-- Cserél JS -->
+  <script>
+    
+      var a = document.getElementById("firstElement").value;
+      var b = document.getElementById("secondElement").value;
+      alert("Elemek : "+a+" "+b);
+
+  </script>
+
+</body>
+
+</html>
