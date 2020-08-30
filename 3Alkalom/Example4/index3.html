@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    var Person = function(name) {
+        this.name = name;
+        this.canTalk = true;
+    };
+
+    Person.prototype.greet = function() {
+        if (this.canTalk) {
+            console.log('Hi, I am ' + this.name);
+        }
+    };
+    
+    var larryPage = new Person("Larry Page");
+    larryPage.greet();
+    
+</script>
+</body>
+</html>

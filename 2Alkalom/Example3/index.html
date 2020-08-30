@@ -11,8 +11,8 @@
 <div class="container">
     <h1>BMI Kalkulátor</h1>
     <form>
-        <p><label>Magasság(CM): </label><input type="text" id="height"></p>
-        <p><label>Testsúly(KG): </label><input type="text" id="weight"></p>
+        <p><label>Magasság(CM): </label><input type="text" id="height" class="input-element"></p>
+        <p><label>Testsúly(KG): </label><input type="text" id="weight" class="input-element"></p>
         <button>Számol</button>
         <div id="results"></div>
         <div id="weight-guide">
@@ -24,5 +24,13 @@
     </form>
 </div>
 </body>
+<script src="cleave.min.js"></script>
+<script>
+    var cleave = new Cleave('.input-element', {
+        numeral: true,
+        numeralThousandsGroupStyle: 'thousand',
+        numeralIntegerScale : 3 
+    });
+</script>
 <script src="script.js"></script>
 </html>

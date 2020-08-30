@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="tableDiv"></div>
+
+
+
+<script>
+    function createTable(line, column, withHeader= false){
+        var tableString = "<table>";
+        if(withHeader){
+            tableString += "<thead><tr>"
+            for(let i = 0; i<column; i++){
+                tableString += "<td></td>";
+            }
+            tableString += "</tr></thead>"
+        }
+        tableString += "<tbody>"
+        for (var i = 0; i < line; i++) {
+            tableString += "<tr>";
+            for (var j = 0; j < column; j++) {
+                tableString += "<td></td>";
+            }
+            tableString += "</tr>";
+        }
+        tableString += "</tbody>"
+        tableString += "</table>";
+        return tableString;
+    }
+    
+    document.getElementById("tableDiv").innerHTML = createTable(10,12);
+</script>
+</body>
+</html>

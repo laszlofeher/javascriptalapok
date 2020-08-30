@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+console.log(typeof 42);
+// elvárt eredmény: "number"
+
+console.log(typeof 'blubber');
+// elvárt eredmény: "string"
+
+console.log(typeof true);
+// elvárt eredmény: "boolean"
+
+console.log(typeof undeclaredVariable);
+// elvárt eredmény: "undefined"
+
+var a = parseInt("10");
+console.log(a);
+var b = parseInt("10.00");
+console.log(b);
+var c = parseInt("10.33");
+console.log(c);
+var d = parseInt("34 45 66");
+console.log(d);
+var e = parseInt(" 60 ");
+console.log(e);
+var f = parseInt("40 years");
+console.log(f);
+var g = parseInt("He was 40");
+console.log(g);
+var h = parseInt("10", 10);
+console.log(h);
+var i = parseInt("010");
+console.log(i);
+var j = parseInt("10", 8);
+console.log(j);
+var k = parseInt("0x10");
+console.log(k);
+var l = parseInt("10", 16);
+console.log(l);
+
+var m = parseFloat("10");
+console.log(m);
+var n = parseFloat("10.00");
+console.log(n);
+var o = parseFloat("10.33");
+console.log(o);
+var p = parseFloat("34 45 66");
+console.log(p);
+var r = parseFloat(" 60 ");
+console.log(r);
+var s = parseFloat("40 years");
+console.log(s);
+var q = parseFloat("He was 40");
+console.log(q);
+
+</script>
+</body>
+</html>
