@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="t1"> </div>
+<div id="t2"> </div>
+
+<script>
+//fv , ami bemenő parameterei sor, oszlop
+// visszaad egy html táblázatot
+
+function tablazatGenerator(sor, oszlop, fejlecLegyen = false){
+    var tablazatHTML = "<table>";
+    if(fejlecLegyen){
+        tablazatHTML += "<thead><tr>";
+        for (var oszlopokAktualisSzama = 0; oszlopokAktualisSzama < oszlop; oszlopokAktualisSzama++) {
+            tablazatHTML += "<td></td>";
+        }
+        tablazatHTML += "</thead></tr>";
+    }
+    tablazatHTML += "<tbody>";
+    for (var i = 0; i < sor; i++) {
+        tablazatHTML += "<tr>";
+        for (var j = 0; j < oszlop; j++) {
+            tablazatHTML += "<td></td>";
+        }
+        tablazatHTML += "</tr>";
+    }
+    tablazatHTML += "</tbody>";
+    tablazatHTML += "</table>";    
+    return tablazatHTML;
+}
+document.getElementById("t1").innerHTML = tablazatGenerator(10,3);
+document.getElementById("t2").innerHTML = tablazatGenerator(10,3,true);
+</script>
+</body>
+</html>

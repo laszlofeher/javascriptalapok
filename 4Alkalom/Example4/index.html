@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minta példa</title>
+</head>
+<body>
+<form>
+    <label for="keresett">
+        Keresett szó
+        <input type="text" name="keresett" id="keresett" />
+    </label>
+    <button type="button" id="keres">Keres</button>
+</form>
+<div id="tartalom">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid corporis fuga laboriosam natus necessitatibus
+        nihil quod suscipit totam. Ab aspernatur autem blanditiis dignissimos dolorum maiores mollitia perspiciatis
+        placeat quod tenetur!</p>
+    Culpa doloribus ipsa quae quaerat recusandae! Ab accusamus modi perspiciatis quo sequi voluptas. Amet aut esse
+        quibusdam quo repellendus sit vel! Adipisci culpa, expedita illum nobis praesentium quidem saepe veniam.
+    Beatae, dolorum ipsam officiis quaerat qui quia! Assumenda beatae cum, debitis fugiat nostrum odio officia
+        placeat unde. Asperiores autem beatae, cumque iure libero minus modi, molestiae nobis numquam quam sint!
+    Accusamus animi aperiam blanditiis cupiditate facilis libero qui, quia? Ipsum iste modi natus odio quidem saepe
+        ullam unde, vitae voluptate voluptates. Cumque error inventore minima quo, repellendus totam vitae! Illo.
+    A autem consectetur consequatur consequuntur corporis doloremque ea, et eum facilis fuga in ipsum iusto laborum
+        laudantium magni mollitia nam odio quae quaerat quia quidem, quos rem, repellat repudiandae voluptatum!
+</div>
+
+
+<script>
+    //függvény, aminek 3 bemeneti parametere van pozicio, hossz, szoveg
+    //Feladata : a szoveg parameterben megadott szöveg adott poziciójába
+    //beleszúr egy <span style="color:red;"> stringet
+    //!!! pozicio+hossz beleszúr egy </span> stringet
+    
+    //végeredmeny példa 
+    //beleszur(3,4,"Valamiilyen szöveg, amibe beleszúrnak valamit")
+    
+    //vegeredmeny
+    //Val<span style="color:red;">amil</span>yen szöveg, amibe beleszúrnak valamit
+    
+    //substring, indexof, lastindexof 
+    
+    
+    
+//    var keresettButton = document.getElementById("keresett");
+//    keresettButton.addEventListener()
+
+    function highlight(start, length, text){
+        const startSpan = "<span style=\"color:red;\">";
+        const endSpan = "</span>";
+        var text1 = text.substring(0, start);
+        var text2 = text.substring(start, start+length);
+        var text3 = text.substring(start+length, text.length);
+        return text1+startSpan+text2+endSpan+text3;
+    }
+    
+    
+    document.getElementById("keres").addEventListener("click", function(event){
+        //console.log(event);
+        //if(event.altKey){
+            
+        //}
+        //Mit keresek
+        var keresettSzoveg = document.getElementById("keresett").value;
+        //Milyen szövegben keresek(Miben)
+        var tartalom = document.getElementById("tartalom").innerText;
+        //console.log(tartalom);
+        //return 332
+        //console.log(tartalom.indexOf(keresettSzoveg, 0));
+        // 333 -ik karakter pozíciótól keresem a következő
+        // előfordulását a "lup" szövegnek.
+        //console.log(tartalom.indexOf(keresettSzoveg, 333));
+        // return 804
+        //console.log(tartalom.indexOf(keresettSzoveg, 805));
+        // return 813
+        //console.log(tartalom.indexOf(keresettSzoveg, 814));
+        // return 1095
+        //console.log(tartalom.indexOf(keresettSzoveg, 1096));
+        var pozicioSzamlalo = 0;
+        // tomb lesz ez a változo
+        var poziciok = [];
+        var talalatokSzama = 0;
+        while(tartalom.indexOf(keresettSzoveg, pozicioSzamlalo) != -1){
+            pozicioSzamlalo = tartalom.indexOf(keresettSzoveg, pozicioSzamlalo);
+            poziciok.push(pozicioSzamlalo);
+            pozicioSzamlalo++;
+            talalatokSzama++;
+        }
+        /*for (let i = 0; i < 10 ; i++) {
+            
+        }*/
+        poziciok.forEach(function(value){tartalom = highlight(value,keresettSzoveg.length, tartalom)});
+        console.log(talalatokSzama);
+        console.log(tartalom);
+        // tömb feldolgozása
+        document.getElementById("tartalom").innerHTML=tartalom;
+    });
+    
+    
+</script>
+
+
+
+</body>
+</html>

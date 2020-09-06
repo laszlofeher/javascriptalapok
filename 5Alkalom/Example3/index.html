@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    $(function () {
+        $("#myButton").bind("onclick", validate);
+        $("#myButton").click(validate);
+    });
+
+    function validate() {
+        if ($("#myText").val().length == 0) {
+            alert("Error")
+        } else {
+            $("#myForm").submit();
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "A link sammler",
+  "description": "Change the current page color",
+  "version": "1.0",
+  "permissions": ["activeTab", "<all_urls>"] ,
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "browser_action": {
+      "default_title": "Set this page's color.",
+      "default_icon": "icon.png",
+      "default_popup": "index.html"
+  },
+  "manifest_version": 2
+}
