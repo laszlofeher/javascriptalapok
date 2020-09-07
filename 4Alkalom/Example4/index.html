@@ -46,12 +46,14 @@
 //    var keresettButton = document.getElementById("keresett");
 //    keresettButton.addEventListener()
 
-    function highlight(start, length, text){
+    function highlight(start, length, textContent, foundedCount){
         const startSpan = "<span style=\"color:red;\">";
         const endSpan = "</span>";
-        var text1 = text.substring(0, start);
-        var text2 = text.substring(start, start+length);
-        var text3 = text.substring(start+length, text.length);
+        start = start+((startSpan.length+endSpan.length)*foundedCount);
+        console.log(start);
+        var text1 = textContent.substring(0, start);
+        var text2 = textContent.substring(start, start+length);
+        var text3 = textContent.substring(start+length, textContent.length);
         return text1+startSpan+text2+endSpan+text3;
     }
     
@@ -90,7 +92,8 @@
         /*for (let i = 0; i < 10 ; i++) {
             
         }*/
-        poziciok.forEach(function(value){tartalom = highlight(value,keresettSzoveg.length, tartalom)});
+        var fc = 0;
+        poziciok.forEach(function(value){tartalom = highlight(value,keresettSzoveg.length, tartalom, fc); fc++});
         console.log(talalatokSzama);
         console.log(tartalom);
         // tömb feldolgozása
